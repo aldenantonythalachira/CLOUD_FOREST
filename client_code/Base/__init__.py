@@ -66,5 +66,10 @@ class Base(BaseTemplate):
       anvil.users.login_with_form()
     self.change_sign_in_text()
 
+  def form_show(self, **event_args):
+    """This method is called when the HTML panel is shown on the screen"""
+    pass
+
+
 
 

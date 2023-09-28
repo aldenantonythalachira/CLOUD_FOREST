@@ -3,6 +3,7 @@ container:
   type: HtmlTemplate
   properties: {tooltip: '', background: '#00cc00', foreground: '', border: '', visible: true,
     role: null, html: '@theme:standard-page.html'}
+  event_bindings: {show: form_show}
 components:
 - type: ColumnPanel
   properties: {}
