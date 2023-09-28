@@ -18,10 +18,10 @@ services:
 startup: {type: form, module: Base}
 package_name: Tutorial
 allow_embedding: false
-name: Clone of Tutorial
+name: Cloud Forest
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-metadata: {title: Tutorial, description: Tutorial}
+metadata: {title: Cloud Forest, description: Renting Trees from Farmers, logo_img: 'asset:cloudforest_logo.jpg'}
 startup_form: null
 db_schema:
   users:
