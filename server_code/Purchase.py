@@ -10,7 +10,6 @@ import anvil.server
 
 @anvil.server.callable
 def charge_user(token, email, asset_id):
-    stripe_customer = anvil.stripe.new_customer(email, token)
     asset = app_tables.assets.get(id=asset_id)
     
     if asset is None:
@@ -24,7 +23,5 @@ def charge_user(token, email, asset_id):
     
     if asset_id in user["purchased_assets"]:
         return  # Asset already purchased, no need to charge again
-    
-    result = stripe_customer.charge(amount=total * 100, currency="SGD")
     user["purchased_assets"] = user["purchased_assets"] + [asset_id]
 
