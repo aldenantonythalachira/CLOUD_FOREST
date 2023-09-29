@@ -1,9 +1,13 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
 components:
 - type: Image
-  properties: {}
+  properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '',
+    foreground: '', visible: true, display_mode: original_size, spacing_above: small,
+    source: '', spacing_below: small, background: '', horizontal_align: center}
   name: image_tree
   layout_properties: {grid_position: 'NCGDXS,CPVJAR'}
 - type: RichText
