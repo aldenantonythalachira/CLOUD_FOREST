@@ -19,7 +19,7 @@ def get_my_assets():
   
   assets = []
   for asset in user["purchased_assets"]:
-    asset_info = app_tables.assets.get(id_name=asset)
+    asset_info = app_tables.assets.get(id=asset)
     assets.append(asset_info)
   
   return assets

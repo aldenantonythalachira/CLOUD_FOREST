@@ -10,7 +10,7 @@ import anvil.server
 
 @anvil.server.callable
 def get_asset_details(asset_name):
-  return app_tables.assets.get(id_name=asset_name)
+  return app_tables.assets.get(id=asset_name)
 
 @anvil.server.callable
 def get_all_assets():

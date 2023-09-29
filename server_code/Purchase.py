@@ -11,7 +11,7 @@ import anvil.server
 @anvil.server.callable
 def charge_user(token, email, asset_name):
   stripe_customer = anvil.stripe.new_customer(email, token)
-  price = app_tables.assets.get(id_name=asset_name)['price']
+  price = app_tables.assets.get(id=asset_name)['price']
   user = anvil.users.get_user()
   if user["purchased_assets"] == None:
     user["purchased_assets"] = []
