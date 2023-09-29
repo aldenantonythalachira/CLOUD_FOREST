@@ -16,7 +16,7 @@ class MyAssets(MyAssetsTemplate):
     self.init_components(**properties)
     self.load_asset()
     
-  def render_asset(self, asset_name):
+  def render_asset(self, asset_id):
     self.content_panel.clear()
     
   def load_assets(self,**event_args):

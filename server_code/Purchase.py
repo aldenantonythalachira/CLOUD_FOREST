@@ -9,16 +9,22 @@ import anvil.server
 
 
 @anvil.server.callable
-def charge_user(token, email, asset_name):
-  stripe_customer = anvil.stripe.new_customer(email, token)
-  price = app_tables.assets.get(id=asset_name)['price']
-  user = anvil.users.get_user()
-  if user["purchased_assets"] == None:
-    user["purchased_assets"] = []
-  
-  if asset_name in user["purchased_assets"]:
-    return
-  
-  result = stripe_customer.charge(amount=price*100, currency="USD")
-  user["purchased_assets"] = user["purchased_assets"] + [asset_name]
+def charge_user(token, email, asset_id):
+    stripe_customer = anvil.stripe.new_customer(email, token)
+    asset = app_tables.assets.get(id=asset_id)
+    
+    if asset is None:
+        raise Exception("Asset not found")  # Handle this case as needed
+    
+    total = asset['total']
+    user = anvil.users.get_user()
+    
+    if user["purchased_assets"] is None:
+        user["purchased_assets"] = []
+    
+    if asset_id in user["purchased_assets"]:
+        return  # Asset already purchased, no need to charge again
+    
+    result = stripe_customer.charge(amount=total * 100, currency="SGD")
+    user["purchased_assets"] = user["purchased_assets"] + [asset_id]
 

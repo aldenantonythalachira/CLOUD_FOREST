@@ -20,12 +20,9 @@ class Checkout(CheckoutTemplate):
   def update_form(self, id):
     asset = anvil.server.call('get_asset_details', id)
     self.asset = asset
-    self.name_label.text = asset["farmer_name"]
-    self.description_label.text = asset['description']
-    self.price_label.text = f"${asset['total']} USD"
-    self.image_content.source = asset['image']
+    self.rental_price.text = f"SGD {asset['total']}"
 
-  def buy_click(self, **event_args):
+  def rent_now_click(self, **event_args):
     """This method is called when the button is clicked"""
     if anvil.users.get_user() == None:
       anvil.users.login_with_form()
@@ -41,7 +38,7 @@ class Checkout(CheckoutTemplate):
   
     token, info = stripe.checkout.get_token(amount=self.asset["total"]*100, currency="SGD", title=self.asset["farmer_name"])
     try:
-      anvil.server.call("charge_user", token, user["email"], self.asset["id_name"])
+      anvil.server.call("charge_user", token, user["email"], self.asset["id"])
       alert("Success")
     except Exception as e:
       alert(str(e))
