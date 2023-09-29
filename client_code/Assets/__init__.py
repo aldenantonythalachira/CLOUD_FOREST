@@ -30,7 +30,7 @@ class Assets(AssetsTemplate):
     asset_panel = GridPanel()
     
     for i, asset in enumerate(assets):
-       c = AssetItem(farmer_name=asset["farmer_name"], location=asset["location"], image=asset["image"],cptpm=asset["cptpm"], trees_available=asset["trees_available"],period_chosen=asset["period_chosen"],total=asset["total"], button_callback=self.render_checkout)
+       c = AssetItem(farmer_name=asset["farmer_name"], location=asset["location"], image=asset["image"],cptpm=asset["cptpm"], trees_available=asset["trees_available"],rental_duration=asset["rental_duration"],total=asset["total"], button_click=self.render_checkout)
        asset_panel.add_component(c, row=str(i//2), width_xs=6)
     
     self.content_panel.add_component(asset_panel)

@@ -22,29 +22,10 @@ components:
   properties: {}
   name: no_of_trees_available
   layout_properties: {grid_position: 'FTOIAX,WWFWWF'}
-- type: DropDown
-  properties:
-    role: null
-    align: full
-    tooltip: ''
-    placeholder: rental duration
-    border: ''
-    enabled: true
-    foreground: ''
-    items: []
-    visible: true
-    font_size: null
-    font: ''
-    spacing_above: small
-    spacing_below: small
-    italic: false
-    background: ''
-    bold: false
-    underline: false
-    include_placeholder: true
+- type: RichText
+  properties: {}
   name: rental_duration
-  layout_properties: {grid_position: 'VHQOBD,FIQODF'}
-  event_bindings: {change: rental_duration_change}
+  layout_properties: {grid_position: 'VHQOBD,SHTTIJ'}
 - type: RichText
   properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
     foreground: '', visible: true, font_size: null, content: '', font: '', spacing_above: small,
@@ -58,7 +39,7 @@ components:
     underline: false, icon: ''}
   name: rent_now_button
   layout_properties: {grid_position: 'WSXNQA,UUSXHQ'}
-  event_bindings: {click: button_callback}
+  event_bindings: {click: button_click}
 is_package: true
 custom_component: true
 properties:

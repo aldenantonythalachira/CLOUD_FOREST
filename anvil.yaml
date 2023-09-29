@@ -79,8 +79,8 @@ db_schema:
     - name: trees_available
       admin_ui: {width: 200, order: 9}
       type: number
-    - name: period_chosen
-      admin_ui: {width: 200, order: 10}
+    - name: rental_duration
+      admin_ui: {order: 10, width: 200}
       type: number
     - name: cptpm
       admin_ui: {width: 200, order: 11}

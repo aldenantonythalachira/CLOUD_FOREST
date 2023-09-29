@@ -19,8 +19,8 @@ class MyAssets(MyAssetsTemplate):
   def render_asset(self, asset_name):
     self.content_panel.clear()
     
-  def load_assets(self):
-    courses = anvil.server.call("get_my_assets")
+  def load_assets(self,**event_args):
+    assets = anvil.server.call("get_my_assets")
     
     if len(assets) > 0:
       self.no_assets_label.visible = False
@@ -28,8 +28,18 @@ class MyAssets(MyAssetsTemplate):
     asset_panel = GridPanel()
     
     for i, asset in enumerate(assets):
-      c = AssetItem(farmer_name=asset["farmer_name"], location=asset["location"], image=asset["image"],cptpm=asset["cptpm"], trees_available=asset["trees_available"],period_chosen=asset["period_chosen"],total=asset["total"], button_callback=self.render_asset)
+      c = AssetItem(farmer_name=asset["farmer_name"], location=asset["location"], image=asset["image"],cptpm=asset["cptpm"], trees_available=asset["trees_available"],rental_duration=asset["rental_duration"],total=asset["total"], button_click=self.render_asset)
       asset_panel.add_component(c, row=str(i//2), width_xs=6)
     
     self.content_panel.add_component(asset_panel)
+
+  def form_show(self, **event_args):
+    """This method is called when the column panel is shown on the screen"""
+    pass
+
+  def load_asset(self,**event_args):
+    """This method is called when the column panel is shown on the screen"""
+    pass
+
+
 

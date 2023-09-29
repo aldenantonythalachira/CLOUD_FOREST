@@ -45,7 +45,7 @@ class Base(BaseTemplate):
     """This method is called when the link is clicked"""
     self.go_to_home()
 
-  def my_courses_click(self, **event_args):
+  def my_assets_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
     self.content_panel.add_component(MyAssets())

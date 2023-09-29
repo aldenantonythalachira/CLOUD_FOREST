@@ -10,28 +10,19 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 class AssetItem(AssetItemTemplate):
-  def __init__(self, farmer_name, location, image, cptpm, trees_available, period_chosen,total,button_callback, **properties):
+  def __init__(self, farmer_name, location, image, cptpm, trees_available, rental_duration,total,button_click, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.farmer_name.content = farmer_name
-    self.location.content = location
+    self.farmer_name.content = "FARMER NAME : "+farmer_name
+    self.location.content = "LOCATION : "+location
     self.image_tree.source = image
-    self.cost_per_tree_per_month.content=cptpm
-    self.no_of_trees_available.content=trees_available
-    self.rental_duration.selected_value=period_chosen
-    self.total_cost.content=total
-    self.button_callback = button_callback
-
+    self.cost_per_tree_per_month.content="CPTPM : SGD "+str(cptpm)
+    self.no_of_trees_available.content="TREES AVAILABLE : "+str(trees_available)
+    self.rental_duration.content="RENTAL DURATION : "+str(rental_duration)+" months"
+    self.total_cost.content="TOTAL : SGD "+str(total)
+    self.button_click=button_click
   def button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.button_callback(self.farmer_name.content.lower())
-
-  def drop_down_1_change(self, **event_args):
-    """This method is called when an item is selected"""
-    pass
-
-  def rental_duration_change(self, **event_args):
-    """This method is called when an item is selected"""
     pass
 
 

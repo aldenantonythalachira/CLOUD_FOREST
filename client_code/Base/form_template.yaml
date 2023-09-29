@@ -22,7 +22,7 @@ components:
       icon: 'fa:money'}
     name: my_assets
     layout_properties: {}
-    event_bindings: {click: my_courses_click}
+    event_bindings: {click: my_assets_click}
   - type: Link
     properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Sign In, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,

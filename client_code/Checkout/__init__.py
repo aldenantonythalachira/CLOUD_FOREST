@@ -18,12 +18,12 @@ class Checkout(CheckoutTemplate):
     self.update_form(id_name)
   
   def update_form(self, id_name):
-    course = anvil.server.call('get_course_details', id_name)
-    self.course = course
-    self.name_label.text = course["name"]
-    self.description_label.text = course['description']
-    self.price_label.text = f"${course['price']} USD"
-    self.image_content.source = course['image']
+    asset = anvil.server.call('get_asset_details', id_name)
+    self.asset = asset
+    self.name_label.text = asset["farmer_name"]
+    self.description_label.text = asset['description']
+    self.price_label.text = f"${asset['total']} USD"
+    self.image_content.source = asset['image']
 
   def buy_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -35,13 +35,13 @@ class Checkout(CheckoutTemplate):
       alert("Please sign in!")
       return
     
-    if user["purchased_courses"] and self.course["id_name"] in user["purchased_courses"]:
-      alert("You already own this course!")
+    if user["purchased_assets"] and self.asset["id_name"] in user["purchased_assets"]:
+      alert("You already own this asset")
       return
   
-    token, info = stripe.checkout.get_token(amount=self.course["price"]*100, currency="USD", title=self.course["name"], description=self.course["description"])
+    token, info = stripe.checkout.get_token(amount=self.asset["total"]*100, currency="SGD", title=self.asset["farmer_name"])
     try:
-      anvil.server.call("charge_user", token, user["email"], self.course["id_name"])
+      anvil.server.call("charge_user", token, user["email"], self.asset["id_name"])
       alert("Success")
     except Exception as e:
       alert(str(e))
