@@ -10,9 +10,10 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 class AssetItem(AssetItemTemplate):
-  def __init__(self, farmer_name, location, image, cptpm, trees_available, rental_duration,total,button_callack, **properties):
+  def __init__(self,asset_id,farmer_name, location, image, cptpm, trees_available, rental_duration,total,button_callback, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.asset_id = asset_id
     self.farmer_name.content = "FARMER NAME : "+farmer_name
     self.location.content = "LOCATION : "+location
     self.image_tree.source = image
@@ -23,7 +24,7 @@ class AssetItem(AssetItemTemplate):
     self.button_callback = button_callback
   def button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.button_callback(self.farmer_name.content.lower())
+    self.button_callback(self.asset_id)
 
 
 

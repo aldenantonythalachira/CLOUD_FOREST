@@ -67,8 +67,8 @@ db_schema:
     - name: farmer_name
       admin_ui: {order: 0, width: 200}
       type: string
-    - name: id_name
-      admin_ui: {width: 200}
+    - name: id
+      admin_ui: {order: 5, width: 200}
       type: string
     - name: location
       admin_ui: {width: 200, order: 6}

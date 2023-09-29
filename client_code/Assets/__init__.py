@@ -21,16 +21,16 @@ class Assets(AssetsTemplate):
     self.content_panel.clear()
     self.load_assets()
     
-  def render_checkout(self, asset_name):
+  def render_checkout(self, asset_id):
     self.content_panel.clear()
-    self.content_panel.add_component(Checkout(asset_name, self.back))
+    self.content_panel.add_component(Checkout(asset_id, self.back))
 
   def load_assets(self):
     assets = anvil.server.call("get_all_assets").search()
     asset_panel = GridPanel()
     
     for i, asset in enumerate(assets):
-       c = AssetItem(farmer_name=asset["farmer_name"], location=asset["location"], image=asset["image"],cptpm=asset["cptpm"], trees_available=asset["trees_available"],rental_duration=asset["rental_duration"],total=asset["total"], button_callback=self.render_checkout)
+       c = AssetItem(asset_id=asset["id"],farmer_name=asset["farmer_name"], location=asset["location"], image=asset["image"],cptpm=asset["cptpm"], trees_available=asset["trees_available"],rental_duration=asset["rental_duration"],total=asset["total"], button_callback=self.render_checkout)
        asset_panel.add_component(c, row=str(i//2), width_xs=6)
     
     self.content_panel.add_component(asset_panel)
