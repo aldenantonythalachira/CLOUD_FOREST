@@ -9,10 +9,10 @@ import anvil.server
 
 
 @anvil.server.callable
-def get_course_details(course_name):
-  return app_tables.courses.get(id_name=course_name)
+def get_asset_details(asset_name):
+  return app_tables.assets.get(id_name=asset_name)
 
 @anvil.server.callable
-def get_all_courses():
-  return app_tables.courses.client_readable()
+def get_all_assets():
+  return app_tables.assets.client_readable()
 

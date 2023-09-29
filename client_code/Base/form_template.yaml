@@ -20,7 +20,7 @@ components:
       col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
       spacing_below: small, italic: false, background: '', bold: false, underline: false,
       icon: 'fa:money'}
-    name: my_courses
+    name: my_assets
     layout_properties: {}
     event_bindings: {click: my_courses_click}
   - type: Link

@@ -9,18 +9,18 @@ import anvil.server
 
 
 @anvil.server.callable
-def get_my_courses():
+def get_my_assets():
   user = anvil.users.get_user()
   if user == None:
     return []
   
-  if not user["purchased_courses"]:
+  if not user["purchased_assets"]:
     return []
   
-  courses = []
-  for course in user["purchased_courses"]:
-    course_info = app_tables.courses.get(id_name=course)
-    courses.append(course_info)
+  assets = []
+  for asset in user["purchased_assets"]:
+    asset_info = app_tables.assets.get(id_name=asset)
+    assets.append(asset_info)
   
-  return courses
+  return assets
 

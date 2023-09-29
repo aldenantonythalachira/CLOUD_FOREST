@@ -9,7 +9,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..Home import Home
-from ..MyCourses import MyCourses
+from ..MyAssets import MyAssets
 from .urls import urls
 
 class Base(BaseTemplate):
@@ -36,10 +36,10 @@ class Base(BaseTemplate):
     else:
       self.sign_in.text = "Sign In"
     
-    self.toggle_my_courses_link()
+    self.toggle_my_assets_link()
       
-  def toggle_my_courses_link(self):
-    self.my_courses.visible = anvil.users.get_user() != None
+  def toggle_my_assets_link(self):
+    self.my_assets.visible = anvil.users.get_user() != None
 
   def title_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -48,7 +48,7 @@ class Base(BaseTemplate):
   def my_courses_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
-    self.content_panel.add_component(MyCourses())
+    self.content_panel.add_component(MyAssets())
     
   def go_to_home(self):
     self.content_panel.clear()

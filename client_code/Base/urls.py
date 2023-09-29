@@ -7,7 +7,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..Home import Home
-from ..Courses import Courses
-from ..MyCourses import MyCourses
+from ..Assets import Assets
+from ..MyAssets import MyAssets
 
-urls = {"home": Home, "courses": Courses, "my-courses": MyCourses}
+urls = {"home": Home, "assets": Assets, "my-assets": MyAssets}

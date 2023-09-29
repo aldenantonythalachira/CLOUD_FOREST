@@ -53,29 +53,38 @@ db_schema:
     - name: signed_up
       admin_ui: {width: 200}
       type: datetime
-    - name: purchased_courses
+    - name: email_confirmation_key
+      admin_ui: {width: 200}
+      type: string
+    - name: purchased_assets
       admin_ui: {width: 200}
       type: simpleObject
-  courses:
-    title: Courses
+  assets:
+    title: Assets
     client: none
     server: full
     columns:
-    - name: name
-      admin_ui: {width: 200}
+    - name: farmer_name
+      admin_ui: {order: 0, width: 200}
       type: string
-    - name: price
-      admin_ui: {width: 200}
-      type: number
-    - name: created
-      admin_ui: {width: 200}
-      type: datetime
-    - name: description
-      admin_ui: {width: 200}
-      type: string
-    - name: image
-      admin_ui: {width: 200}
-      type: media
     - name: id_name
       admin_ui: {width: 200}
       type: string
+    - name: location
+      admin_ui: {width: 200, order: 6}
+      type: string
+    - name: image
+      admin_ui: {width: 200, order: 7}
+      type: media
+    - name: trees_available
+      admin_ui: {width: 200, order: 9}
+      type: number
+    - name: period_chosen
+      admin_ui: {width: 200, order: 10}
+      type: number
+    - name: cptpm
+      admin_ui: {width: 200, order: 11}
+      type: number
+    - name: total
+      admin_ui: {width: 200, order: 12}
+      type: number
