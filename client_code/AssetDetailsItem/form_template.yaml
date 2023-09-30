@@ -1,29 +1,43 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: none, background: ''}
 components:
 - type: RichText
-  properties: {}
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: 1px solid black,
+    foreground: '', visible: true, font_size: 30, content: '', font: Roboto, spacing_above: small,
+    spacing_below: none, data: null, background: '', format: markdown}
   name: farmer_name
   layout_properties: {grid_position: 'JLHZYU,AWJETU'}
 - type: RichText
-  properties: {}
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: 1px solid black,
+    foreground: '', visible: true, font_size: 30, content: '', font: Roboto, spacing_above: none,
+    spacing_below: none, data: null, background: '', format: markdown}
   name: location
   layout_properties: {grid_position: 'JTPXGD,SRJURU'}
 - type: RichText
-  properties: {}
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: 1px solid black,
+    foreground: '', visible: true, font_size: 30, content: '', font: Roboto, spacing_above: none,
+    spacing_below: none, data: null, background: '', format: markdown}
   name: cost_per_tree_per_month
   layout_properties: {grid_position: 'QHACCX,CWCNNR'}
 - type: RichText
-  properties: {}
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: 1px solid black,
+    foreground: '', visible: true, font_size: 30, content: '', font: Roboto, spacing_above: none,
+    spacing_below: none, data: null, background: '', format: markdown}
   name: no_of_trees_available
   layout_properties: {grid_position: 'POWSYB,TDTVOH'}
 - type: RichText
-  properties: {}
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: 1px solid black,
+    foreground: '', visible: true, font_size: 30, content: '', font: Roboto, spacing_above: none,
+    spacing_below: none, data: null, background: '', format: markdown}
   name: rental_duration
   layout_properties: {grid_position: 'OIEDEQ,TWGFMM'}
 - type: RichText
-  properties: {}
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: 1px solid black,
+    foreground: '', visible: true, font_size: 30, content: '', font: Roboto, spacing_above: none,
+    spacing_below: small, data: null, background: '', format: markdown}
   name: total_cost
   layout_properties: {grid_position: 'ZLAUYZ,GWJWAN'}
 is_package: true
