@@ -37,10 +37,9 @@ class Checkout(CheckoutTemplate):
       return
   
     
-    token, info = stripe.checkout.get_token(amount=self.asset["total"] * 100 , currency="SGD", title=self.asset["farmer_name"])
-
+    stripe.checkout.get_token(amount=self.asset["total"] * 100 , currency="SGD", title=self.asset["farmer_name"])
     try:
-      anvil.server.call("charge_user", token, user["email"], self.asset["id"])
+      anvil.server.call("charge_user", user["email"], self.asset["id"])
       alert("Success")
     except Exception as e:
       alert(str(e))

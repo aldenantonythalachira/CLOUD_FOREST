@@ -9,7 +9,7 @@ import anvil.server
 
 
 @anvil.server.callable
-def charge_user(token, email, asset_id):
+def charge_user(email, asset_id):
     asset = app_tables.assets.get(id=asset_id)
     
     if asset is None:
