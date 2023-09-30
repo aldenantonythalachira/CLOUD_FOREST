@@ -15,4 +15,3 @@ def get_asset_details(asset_id):
 @anvil.server.callable
 def get_all_assets():
     return app_tables.assets.client_readable()
-

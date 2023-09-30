@@ -1,7 +1,29 @@
 container:
-  type: HtmlTemplate
-  properties: {html: "<center style=\"font-style:italic; color:#888; margin: 3em;\"\
-      >\n  (Insert your custom HTML here)\n</center>\n<div anvil-slot=\"default\"\
-      ></div>"}
-components: []
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: RichText
+  properties: {}
+  name: farmer_name
+  layout_properties: {grid_position: 'JLHZYU,AWJETU'}
+- type: RichText
+  properties: {}
+  name: location
+  layout_properties: {grid_position: 'JTPXGD,SRJURU'}
+- type: RichText
+  properties: {}
+  name: cost_per_tree_per_month
+  layout_properties: {grid_position: 'QHACCX,CWCNNR'}
+- type: RichText
+  properties: {}
+  name: no_of_trees_available
+  layout_properties: {grid_position: 'POWSYB,TDTVOH'}
+- type: RichText
+  properties: {}
+  name: rental_duration
+  layout_properties: {grid_position: 'OIEDEQ,TWGFMM'}
+- type: RichText
+  properties: {}
+  name: total_cost
+  layout_properties: {grid_position: 'ZLAUYZ,GWJWAN'}
 is_package: true
