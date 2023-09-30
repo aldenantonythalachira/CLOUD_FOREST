@@ -1,14 +1,7 @@
 container:
   type: HtmlTemplate
-  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
-    role: null, html: "<div class=\"bg-white rounded-lg shadow-md hover:shadow-lg\
-      \ transition-transform transform hover:scale-105\">\n    <div class=\"p-4\"\
-      >\n        <h3 class=\"text-2xl font-semibold text-gray-800\">{{ farmer_name\
-      \ }}</h3>\n        <p class=\"text-gray-600\">{{ location }}</p>\n    </div>\n\
-      \    <div class=\"px-4 pb-4\">\n        <p class=\"text-gray-700\">CPTPM: {{\
-      \ cptpm }}</p>\n        <p class=\"text-gray-700\">Trees Available: {{ trees_available\
-      \ }}</p>\n        <p class=\"text-gray-700\">Rental Duration: {{ rental_duration\
-      \ }} months</p>\n        <p class=\"text-indigo-600 font-semibold text-lg mt-2\"\
-      >Total: {{ total }}</p>\n    </div>\n</div>\n\n"}
+  properties: {html: "<center style=\"font-style:italic; color:#888; margin: 3em;\"\
+      >\n  (Insert your custom HTML here)\n</center>\n<div anvil-slot=\"default\"\
+      ></div>"}
 components: []
 is_package: true

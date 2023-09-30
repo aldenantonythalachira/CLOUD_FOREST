@@ -8,7 +8,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from ..AssetItem import AssetItem
+from ..AssetDetailsItem import AssetDetailsItem
 
 class MyAssets(MyAssetsTemplate):
   def __init__(self, **properties):
@@ -28,7 +28,7 @@ class MyAssets(MyAssetsTemplate):
     asset_panel = GridPanel()
     
     for i, asset in enumerate(assets):
-      c = AssetItem(asset_id=asset["id"],farmer_name=asset["farmer_name"], location=asset["location"], image=asset["image"],cptpm=asset["cptpm"], trees_available=asset["trees_available"],rental_duration=asset["rental_duration"],total=asset["total"], button_callback=False)
+      c = AssetDetailsItem(farmer_name=asset["farmer_name"], location=asset["location"],cptpm=asset["cptpm"], trees_available=asset["trees_available"],rental_duration=asset["rental_duration"],total=asset["total"])
       asset_panel.add_component(c, row=str(i//2), width_xs=6)
     
     self.content_panel.add_component(asset_panel)
