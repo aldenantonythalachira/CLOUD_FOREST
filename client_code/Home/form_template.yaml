@@ -5,7 +5,7 @@ components:
 - type: ColumnPanel
   properties: {col_widths: '{}'}
   name: content_panel
-  layout_properties: {grid_position: 'NBHHJC,HRQODP'}
+  layout_properties: {grid_position: 'WPJFCH,PFZRIY'}
   components:
   - type: Image
     properties: {role: null, vertical_align: center, height: 302, tooltip: '', border: '',
