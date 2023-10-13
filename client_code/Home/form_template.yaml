@@ -17,8 +17,8 @@ components:
   - type: RichText
     properties: {role: null, align: center, tooltip: '', enable_slots: true, border: '',
       foreground: '', visible: true, font_size: 30, content: 'Welcome to Cloud Forest.Your
-        One Stop Destination To Save The Earth. Rent Trees And Save The Planet. It''s
-        that simple.
+        One Stop Destination To Make This World A Safer Place. Rent Trees And Save
+        The Planet. It''s that simple.
 
         ', font: '', spacing_above: small, spacing_below: small, data: null, background: '',
       format: markdown}
